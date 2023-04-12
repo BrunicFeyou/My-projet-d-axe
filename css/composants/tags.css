@@ -1,0 +1,78 @@
+#beige, .tranquilité{
+      border: 1px solid bisque ;
+}
+#orange, .digital{
+      border: 1px solid orange ;
+}
+#jaune, .plaisir{
+      border: 1px solid yellow ;
+}
+#bleu, .activités{
+      border: 1px solid blue;
+}
+#rouge, .travail{
+      border: 1px solid red;
+}
+#marron, .course{
+      border: 1px solid brown;
+}
+#blanc, .home{
+      border: 1px solid rgb(180, 180, 180);
+}
+#vert, .happy{
+      border: 1px solid green;
+}
+#noir, .badmood{
+      border: 1px solid black;
+}
+#gris, .voyage{
+      border: 1px solid gray ;
+}
+
+.tags-list-deroulante li {
+  list-style: none;
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+
+  
+}
+
+.tags-list-deroulante li:hover{
+      background-color: antiquewhite;
+      cursor: pointer;
+}
+
+.tags-list-deroulante{
+      float: left;
+      width: 120px;
+      height: auto;
+      padding: 4px 0 4px 0;
+      margin-top: 3px;
+      background-color: white;
+      border-radius: 3px;
+      border: 1px solid var(--main-bg-color) ;
+      display:none;
+      
+
+}
+
+.tags-list-deroulante li i{
+      padding: 5px;
+}
+
+
+.le-btn-tags{
+      width: auto;
+      height: auto;
+      /* display: block; */
+      position: absolute;
+}
+
+.le-btn-tags li{
+      list-style: none;
+      width: auto;
+      
+      
+     }
+
