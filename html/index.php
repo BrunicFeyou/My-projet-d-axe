@@ -62,6 +62,47 @@ $publications = $requete->fetchAll( PDO::FETCH_ASSOC )
         <div class="page"> <!-- début de l'accueil du réseau social; c'est la page déroulante-->
         
         <?php require '../donneesphp/navbarhorizontal.template.php'  ?> 
+        <header class="scrolltags">
+       
+       <!-- <div class="filtre">
+           <p>Filtre</p>
+       </div> -->
+
+           <div class="les-btn-tags">
+               <button type="radio" name="lestags" class="btn-tags" id="be" data-tag="tranquilité">
+                   <p>#tranquilité</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="or" data-tag="digital">
+                   <p>#digital</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="ja" data-tag="plaisir">
+                   <p>#plaisir</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="bl" data-tag="activités">
+                   <p>#activités</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="ro" data-tag="travail">
+                   <p>#travail</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="ma" data-tag="courses">
+                   <p>#courses</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="bla" data-tag="home">
+                   <p>#home</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="ve" data-tag="happy">
+                   <p>#happy</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="no" data-tag="badmood">
+                   <p>#badmood</p>
+               </button>
+               <button type="radio" name="lestags" class="btn-tags" id="gr" data-tag="voyage">
+                   <p>#voyage</p>
+               </button>
+           </div>
+           <div class="vide-div">     </div>
+       
+   </header>
           <?php require '../donneesphp/popup.template.php' ?>          
           <?php
          
@@ -142,5 +183,8 @@ $publications = $requete->fetchAll( PDO::FETCH_ASSOC )
  <script src="../javascript/sidebar.js"></script>
  <script src="../javascript/inscritoi.js"></script>
  <script src="../javascript/localstrorage.js"></script>
+ <script src="../javascript/filtre.js"></script>
+ <script src="../javascript/tags.js"></script>
+ 
 </body>
 </html>
