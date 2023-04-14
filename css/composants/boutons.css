@@ -92,6 +92,7 @@ font-size: 25px;
 .lien-delete{
     border-style: none;
     background: white;
+   /*  margin-left: 100px; */
 
 }
 
@@ -176,4 +177,7 @@ font-size: 25px;
     
 }
 
-
+.navverticale li button {
+    border-style: none;
+    background-color: transparent;
+}

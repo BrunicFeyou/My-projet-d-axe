@@ -13,9 +13,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['form'] == 'addpublication')  
            $data = [
            'commentaire' => $_POST['opinion'],
             'nom' => 1,
-            'tag' => $_POST['ntag']
+            'tag' => $_POST['ntag'],
+            'public'=> 2
             ];
-            $requete = $database->prepare("INSERT INTO publication (nom, type, tag) VALUES (:nom,:commentaire,:tag) ");
+            $requete = $database->prepare("INSERT INTO publication (nom, type, tag, public) VALUES (:nom,:commentaire,:tag,:public) ");
             if ( $requete->execute($data) ) {
              echo "La publication a été publiée";
              header('Location: ../html/index.php');

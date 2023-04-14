@@ -4,7 +4,7 @@
 #orange, .digital{
       border: 1px solid orange ;
 }
-#jaune, .plaisir{
+#jaune, .détente{
       border: 1px solid yellow ;
 }
 #bleu, .activités{
@@ -13,17 +13,17 @@
 #rouge, .travail{
       border: 1px solid red;
 }
-#marron, .course{
+#marron, .courses{
       border: 1px solid brown;
 }
 #blanc, .home{
-      border: 1px solid rgb(180, 180, 180);
+      border: 1px solid black;
 }
 #vert, .happy{
       border: 1px solid green;
 }
-#noir, .badmood{
-      border: 1px solid black;
+#noir, .jeux{
+      border: 1px solid violet;
 }
 #gris, .voyage{
       border: 1px solid gray ;

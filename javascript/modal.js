@@ -15,7 +15,10 @@ const btntag= document.querySelector('.le-btn-tags li')
 
 // console.log(lst1)
 
-
+if (!isConnected) {
+    popup.style.display= 'none' ;
+} 
+   
 popup.addEventListener('click', function (){
     modal.style.display= 'block' ; 
     

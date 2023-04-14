@@ -20,13 +20,13 @@
                              <select class="tags-list-deroulante" name="ntag">
                                  <option value= "tranquilité"><i id="beige" class="fa-solid fa-circle"></i>#tranquilité</option>
                                  <option value= "digital"><i id="orange" class="fa-solid fa-circle"></i>#digital</option>
-                                 <option value= "plaisir"><i id="jaune" class="fa-solid fa-circle"></i>#plaisir</option>
+                                 <option value= "détente"><i id="jaune" class="fa-solid fa-circle"></i>#détente</option>
                                  <option value= "activités"><i id="bleu" class="fa-solid fa-circle"></i>#activités</option>
                                  <option value= "travail"><i id="rouge" class="fa-solid fa-circle"></i>#travail</option>
-                                 <option value= "course"><i id="marron" class="fa-solid fa-circle"></i>#courses</option>
+                                 <option value= "courses"><i id="marron" class="fa-solid fa-circle"></i>#courses</option>
                                  <option value= "home"><i id="blanc" class="fa-solid fa-circle"></i>#home</option>
                                  <option value= "happy"><i id="vert" class="fa-solid fa-circle"></i>#happy</option>
-                                 <option value= "badmood"><i id="noir" class="fa-solid fa-circle"></i>#badmood</option>
+                                 <option value= "jeux"><i id="noir" class="fa-solid fa-circle"></i>#jeux</option>
                                  <option value= "voyage"><i id="gris" class="fa-solid fa-circle"></i>#voyage</option>
                               </select>
                             </form>

@@ -1,18 +1,22 @@
-<?php require '../BDD/connect.php';
+<?php
+session_start() 
+?>
+
+<?php
+require '../BDD/connect.php';
+require '../BDD/jointure.php';
 ?>
 
 
-<?php 
-  session_start();
 
-$requete = $database->prepare('SELECT * FROM publication ORDER BY creation DESC');
-$requete->execute();
 
-$publications = $requete->fetchAll( PDO::FETCH_ASSOC )
+<?php    
+$requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription 
+ON publication.nom = inscription.user_id ORDER BY creation DESC' );
+ $requete->execute();
+ $publications = $requete->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -61,58 +65,25 @@ $publications = $requete->fetchAll( PDO::FETCH_ASSOC )
     
         <div class="page"> <!-- début de l'accueil du réseau social; c'est la page déroulante-->
         
+          
         <?php require '../donneesphp/navbarhorizontal.template.php'  ?> 
-        <header class="scrolltags">
+          
        
-       <!-- <div class="filtre">
+          <!-- <div class="filtre">
            <p>Filtre</p>
-       </div> -->
+          </div> -->
 
-           <div class="les-btn-tags">
-               <button type="radio" name="lestags" class="btn-tags" id="be" data-tag="tranquilité">
-                   <p>#tranquilité</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="or" data-tag="digital">
-                   <p>#digital</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="ja" data-tag="plaisir">
-                   <p>#plaisir</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="bl" data-tag="activités">
-                   <p>#activités</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="ro" data-tag="travail">
-                   <p>#travail</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="ma" data-tag="courses">
-                   <p>#courses</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="bla" data-tag="home">
-                   <p>#home</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="ve" data-tag="happy">
-                   <p>#happy</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="no" data-tag="badmood">
-                   <p>#badmood</p>
-               </button>
-               <button type="radio" name="lestags" class="btn-tags" id="gr" data-tag="voyage">
-                   <p>#voyage</p>
-               </button>
-           </div>
-           <div class="vide-div">     </div>
-       
-   </header>
+          <?php require '../donneesphp/tags.template.php' ?>  
           <?php require '../donneesphp/popup.template.php' ?>          
           <?php
-         
+        
          foreach($publications as $publication ) {
            echo '  <article  class="carte-publication-texte '.$publication['tag'].'">
             <div class="identification-carte">
                <div class="image-profil">
                   <img src="../Images/image profil.jpg" alt="" class="photo-profil">
                </div>
-               <span class="nom-utilisateur">Brunic Feyou </span>
+               <span class="nom-utilisateur"> '.$publication['Pseudo'].' </span>
                <div class="icone-poubelle">
                   <button class="lien-delete" onclick="popupdel('.$publication["id"].')">
                      <i class="fa-solid fa-trash"></i>
@@ -147,19 +118,14 @@ $publications = $requete->fetchAll( PDO::FETCH_ASSOC )
            <button class="btn-affichage-commentaires">
                <i class="affiche-commentaire"> "afficher les 28 commentaires"</i>
            </button>
-           </article> <br> </br>';
+           </article> ';
 
             }
-    
-     
-
-
-
-         ?>
-
-            
-            <!-- <div id="forms-pub">+</div> -->
         
+        
+         ?>
+ 
+            <!-- <div id="forms-pub">+</div> -->
        
         </div>
         
@@ -183,8 +149,9 @@ $publications = $requete->fetchAll( PDO::FETCH_ASSOC )
  <script src="../javascript/sidebar.js"></script>
  <script src="../javascript/inscritoi.js"></script>
  <script src="../javascript/localstrorage.js"></script>
- <script src="../javascript/filtre.js"></script>
  <script src="../javascript/tags.js"></script>
+ <script src="../javascript/filtre.js"></script>
+ 
  
 </body>
 </html>
