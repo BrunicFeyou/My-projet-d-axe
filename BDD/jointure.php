@@ -1,10 +1,17 @@
+
+
 <?php
+// PAGE BROULLION ELLE NE ME SERT A RIEN
+
+
+
+
 require '../BDD/connect.php'
 ?>
 <?php
 
 $gettwitter = $database->prepare('SELECT  * FROM publication INNER JOIN inscription 
-ON publication.nom = inscription.user_id');
+ON publication.user_id = inscription.id');
  $gettwitter->execute();
  $results = $gettwitter->fetchAll(PDO::FETCH_ASSOC);
  /* echo '<pre>';

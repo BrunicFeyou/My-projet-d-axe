@@ -1,21 +1,23 @@
 <?php
-session_start() 
+/* session_start(); */
 ?>
 
 <?php
 require '../BDD/connect.php';
 require '../BDD/jointure.php';
+require '../BDD/image.php';
+require '../BDD/publication.php';
 ?>
 
 
 
 
 <?php    
-$requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription 
+/* $requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription 
 ON publication.nom = inscription.user_id ORDER BY creation DESC' );
  $requete->execute();
  $publications = $requete->fetchAll(PDO::FETCH_ASSOC);
-
+ */
 ?>
 
 
@@ -39,7 +41,20 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
 <body id="body-accueil">
     <?php require '../donneesphp/navbarmobil.template.php'; ?> 
     <?php  require '../donneesphp/modal.template.php'; ?>
-    <?php require '../donneesphp/inscritoi.php' ?>
+
+
+    <?php
+
+    if(isset($_SESSION['pseudo'])){
+
+   
+    
+   } else {
+
+    require '../donneesphp/inscritoi.php';
+   }
+   
+    ?>
     <?php 
     foreach($publications as $publication) {  ?>
          
@@ -74,21 +89,57 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
           </div> -->
 
           <?php require '../donneesphp/tags.template.php' ?>  
-          <?php require '../donneesphp/popup.template.php' ?>          
-          <?php
+          <?php 
+
+          if(isset($_SESSION['pseudo'])){
+
+            require '../donneesphp/popup.template.php';
         
+    
+          } else {
+       
+            
+          }
+          
+          ?>   
+          <?php   
+        $requete = $database->prepare('SELECT  * FROM publication ORDER BY creation DESC /* INNER JOIN inscription 
+        ON publication.nom = inscription.user_id ORDER BY creation DESC */' );
+         $requete->execute();
+         $publications = $requete->fetchAll();
+
+        // var_dump($publications);
          foreach($publications as $publication ) {
+            $getUser = $database->prepare("SELECT * FROM inscription WHERE id = :postNom"); //on prépare une requete qui selectionne toutes les colonnes du tableau
+            // inscription dans le quel on place un placeholder ":postNom" 
+            $getUser->execute(["postNom" => $publication['user_id']]); 
+            $user = $getUser->fetch();
+            $idUser = $user['id']; 
+            
            echo '  <article  class="carte-publication-texte '.$publication['tag'].'">
             <div class="identification-carte">
                <div class="image-profil">
                   <img src="../Images/image profil.jpg" alt="" class="photo-profil">
                </div>
-               <span class="nom-utilisateur"> '.$publication['Pseudo'].' </span>
-               <div class="icone-poubelle">
-                  <button class="lien-delete" onclick="popupdel('.$publication["id"].')">
+               <span class="nom-utilisateur"> '.$user['Pseudo'].' </span>';
+               if(isset($_SESSION['id'])){
+                   if($_SESSION['id']== $idUser) { 
+                     echo'
+                     <div class="icone-poubelle">
+                     <button class="lien-delete" onclick="popupdel('.$publication["id"].')">
                      <i class="fa-solid fa-trash"></i>
-                  </button>  
-                </div>
+                      </button>  
+                      </div>';
+                   } 
+                }else {   
+                    echo' <div style="display: none" class="icone-poubelle">
+                    <button class="lien-delete" onclick="popupdel('.$publication["id"].')">
+                       <i class="fa-solid fa-trash"></i>
+                    </button>  
+                  </div>'; 
+                  }
+
+                 echo '
             </div>
             <div class="date-publication"> <!-- La date de publication du poste -->
              <span>
@@ -97,7 +148,15 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
             <div class="texte-publication">
              <span class="text-publication">
           
-              '.$publication['type'].' <br> <br> 
+              '.$publication['type'].' <br>';
+              if(isset($publication['images'])){
+                echo '<img class="img-pub" src= "'.$publication['images'].'">';
+                
+              } else { 
+                 echo '<img style= "display : none" class="img-pub" src= "'.$publication['images'].'">'; 
+                }
+                
+              echo ' <br> 
               #'.$publication['tag'].'
                </span>
             </div>
@@ -106,6 +165,7 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
                    <i class="fa-regular fa-heart"></i>
                    <!-- <img src="" alt=" un coeur pour aimer la publication" class="coeur"> -->
                </a>
+               
                <a class="commentaires">
                    <i class="fa-solid fa-comment"></i>
                    <!-- <img src="" alt=" une icone pour laisser un commentaire" class="commentaire"> -->
@@ -124,7 +184,7 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
         
         
          ?>
- 
+       
             <!-- <div id="forms-pub">+</div> -->
        
         </div>

@@ -1,4 +1,8 @@
-<?php require '../BDD/connect.php'; ?>
+<?php session_start(); ?>
+
+<?php
+
+require '../BDD/connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

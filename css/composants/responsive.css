@@ -89,6 +89,15 @@
     .poste{
        margin: 0%;
        right: 0px;
+       width: 100%;
+    }
+}
+
+@media (max-width:505px) {
+    .modal-inscription{
+       /* margin: 0%;
+       right: 0px; */
+       width: 100%;
     }
 }
 /* La page tags */

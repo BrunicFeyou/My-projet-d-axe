@@ -12,10 +12,10 @@
 
 .btn-img {
     
-    gap: 10px;
+   
     padding-top: 15px;
     border-bottom: 1px solid grey;
-
+    
 
 }
 
@@ -133,6 +133,7 @@ font-size: 25px;
     border-radius: 5px;
     background-color: white;
     color: var(--main-bg-color);
+    z-index: 0;
 }
 
 .btn-tags{

@@ -1,4 +1,7 @@
-<?php require '../BDD/connect.php'; 
+<?php
+// PAGE BROUILLON ELLE NE ME SERT A RIEN
+
+require '../BDD/connect.php'; 
 
 
 
