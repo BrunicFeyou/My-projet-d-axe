@@ -1,12 +1,18 @@
 <?php 
 session_start();
 
-require '../BDD/connect.php'; ?>
+require '../BDD/connect.php';
+require '../BDD/jointure.php';
+require '../BDD/image.php';
+
+
+?>
+
 
 <?php    
-$requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription ON publication.user_id = inscription.id ' );
+/* $requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription ON publication.user_id = inscription.id ' );
  $requete->execute();
- $publications = $requete->fetchAll(PDO::FETCH_ASSOC);
+ $publications = $requete->fetchAll(PDO::FETCH_ASSOC); */
 
 ?>
 
@@ -25,6 +31,24 @@ $requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription
     <title>Document</title>
 </head>
 <body id="body-profil">
+
+<?php 
+    foreach($publications as $publication) {  ?>
+         
+        <div class="fond-suppression" id="supp<?php echo $publication["id"]; ?>">
+          <div class="modal-suppression">
+              <p class="publications" >Voulez-vous vraiment suppprimer ce poste ? </p>
+              <div class="les-boutons">
+                  <a href='../BDD/delete.php?id=<?php echo $publication["id"]; ?>'>
+                   <button type="submit" class="confirmer">Confirmer</button>
+                  </a>
+                  <button class="annuler">Annuler</button>
+              </div>
+          </div>
+        </div>
+    
+<?php } ?>
+
     <?php require '../donneesphp/navbarmobil.template.php'; ?>
     <?php  require '../donneesphp/modal.template.php'; ?>
     <div class="le-profil">
@@ -50,8 +74,9 @@ $requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription
 
                     <header aria-activedescendant="info-profil-perso">
                         <!-- les sous contenaire plus précis sur les données de l'utilisateurs avec sa photo de profil -->
-
-                        <div onclick="" id="forms-pub"></div>
+                        <?php  
+                        require '../donneesphp/popup.template.php'
+                        ?>
 
                         <div aria-label="info-profil-perso" class="image-profil-grand-espace">
                             <div aria-label="info-profil-perso" class="image-profil-petit-espace">
@@ -166,9 +191,7 @@ $requete = $database->prepare('SELECT  * FROM publication INNER JOIN inscription
                                 <!-- <img src="" alt=" un avion pour partager le post" class="avion"> -->
                             </a>
                        </div>
-                       <button class="btn-affichage-commentaires">
-                           <i class="affiche-commentaire"> "afficher les 28 commentaires"</i>
-                       </button>
+                       
                        </article> ';
 
 

@@ -12,9 +12,8 @@
     position: fixed;
     top: 5px;
     left: 0px;
-    
-    
-    
+    z-index: 2;
+     
 }
 
 
@@ -43,12 +42,32 @@
     border-radius: 0px 25px 25px 0px;
     transition: all 1s ease-in-out;
     display: none;
+    align-items: center;
+    
+
 }
 
-.navbar-vertical2.hide{
+.navbar-vertical2.hide {
+    animation-name: glissement;
+    animation-duration: .5s;
     display: grid;
-    transition: 5s ease-in-out;
 }
+
+@keyframes glissement {
+    from {
+       
+        width: 0%;
+    }
+     to{
+        
+        width: 100%;
+     }
+}
+
+
+
+
+
 
 /* .navbar-vertical2.hide{
     display: block;
@@ -109,11 +128,12 @@ a {
 
 .navbar-horizontal{
     
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(255, 228, 196, 0.9);
+    
     position: sticky;
     top: 0%;
     backdrop-filter: blur(3px);
-    z-index: -3;
+    z-index: 1;
     
     
    

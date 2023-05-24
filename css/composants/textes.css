@@ -129,3 +129,14 @@ color: rgb(61, 61, 61);
     /* margin-bottom: 15px; */
 
 }
+
+.title{
+    margin-top: 15px;
+    color: var(--main-bg-color);
+}
+
+.btn-ins a{
+    color: var(--main-bg-color);
+    text-decoration: underline;
+    
+}

@@ -30,16 +30,6 @@ fermer.addEventListener('click', function (){
 })
 
 
-btntag.addEventListener('click', function(){ 
-    if (taglist.style.display= 'none') {
-        taglist.style.display= 'block'
-    } else {
-        /* taglist.removeProprety('display') */
-        taglist.style.display= 'none'
-    }
-   
-
-})
 
 
 

@@ -22,15 +22,17 @@ const tags= document.querySelectorAll('.btn-tags')
       beige.classList.add("active")
         removeBg()
         beige.style.background= 'bisque'
-        addPost.style.background='bisque'
         navBar.style.background='bisque'
+        addPost.style.background='bisque'
+        
         
         
       } else {
         beige.classList.remove("active")
         beige.style.background= ''
-        addPost.style.background=''
         navBar.style.background=''
+        addPost.style.background=''
+        
         
        
       }
@@ -42,14 +44,16 @@ const tags= document.querySelectorAll('.btn-tags')
           orange.classList.add("active")
             removeBg()
             orange.style.background= 'orange'
-            addPost.style.background='orange'
             navBar.style.background='orange'
+            addPost.style.background='orange'
+            
            
           } else {
             orange.classList.remove("active")
             orange.style.background= ''
-            addPost.style.background=''
             navBar.style.background=''
+            addPost.style.background=''
+            
             
           }
        
@@ -60,14 +64,16 @@ const yellow= jaune.addEventListener('click', function(){
       jaune.classList.add("active")
         removeBg()
         jaune.style.background= 'yellow'
-        addPost.style.background='yellow'
         navBar.style.background='yellow'
+        addPost.style.background='yellow'
+        
         
       } else {
         jaune.classList.remove("active")
         jaune.style.background= ''
-        addPost.style.background=''
         navBar.style.background=''
+        addPost.style.background=''
+        
         
         
       }
@@ -79,14 +85,16 @@ const bleue= bleu.addEventListener('click', function(){
       bleu.classList.add("active")
         removeBg()
         bleu.style.background= 'blue'
-        addPost.style.background='blue'
         navBar.style.background='blue'
+        addPost.style.background='blue'
+        
         
       } else {
         bleu.classList.remove("active")
         bleu.style.background= ''
-        addPost.style.background=''
         navBar.style.background=''
+        addPost.style.background=''
+        
         
       }
    
@@ -99,14 +107,16 @@ const bleue= bleu.addEventListener('click', function(){
       rouge.classList.add("active")
         removeBg()
         rouge.style.background= 'red'
-        addPost.style.background='red'
         navBar.style.background="red"
+        addPost.style.background='red'
+        
         
       } else {
         rouge.classList.remove("active")
         rouge.style.background= ''
-        addPost.style.background=''
         navBar.style.background=""
+        addPost.style.background=''
+        
         
       }
    
@@ -118,14 +128,16 @@ const brown=  marron.addEventListener('click', function(){
         removeBg()
         
          marron.style.background= 'brown'
-         addPost.style.background='brown'
          navBar.style.background='brown'
+         addPost.style.background='brown'
+         
          
        } else {
         marron.classList.remove("active")
          marron.style.background= ''
-         addPost.style.background=''
          navBar.style.background=''
+         addPost.style.background=''
+        
          
        }
     
@@ -136,14 +148,16 @@ const black=  noir.addEventListener('click', function(){
       noir.classList.add("active")
         removeBg()
         noir.style.background= 'black'
-        addPost.style.background='black'
         navBar.style.background='black'
+        addPost.style.background='black'
+        
         
       } else {
         noir.classList.remove("active")
         noir.style.background= ''
-        addPost.style.background=''
         navBar.style.background=''
+        addPost.style.background=''
+        
         
       }
    
@@ -154,14 +168,16 @@ const black=  noir.addEventListener('click', function(){
           vert.classList.add("active")
             removeBg()
             vert.style.background= 'green'
-            addPost.style.background='green'
             navBar.style.background='green'
+            addPost.style.background='green'
+            
             
           } else {
             vert.classList.remove("active")
             vert.style.background= ''
-            addPost.style.background=''
             navBar.style.background=''
+            addPost.style.background=''
+            
             
           }
        
@@ -173,14 +189,16 @@ const black=  noir.addEventListener('click', function(){
             removeBg()
             
             violet.style.background= 'violet'
-            addPost.style.background='violet'
             navBar.style.background='violet'
+            addPost.style.background='violet'
+            
             
           } else {
             violet.classList.remove("active")
             violet.style.background= ''
-            addPost.style.background=''
             navBar.style.background=''
+            addPost.style.background=''
+            
             
           }
        
@@ -191,14 +209,16 @@ const black=  noir.addEventListener('click', function(){
           gris.classList.add("active")
             removeBg()
             gris.style.background= 'gray'
-            addPost.style.background='gray'
             navBar.style.background='gray'
+            addPost.style.background='gray'
+            
             
           } else {
             gris.classList.remove("active")
             gris.style.background= ''
-            addPost.style.background=''
             navBar.style.background=''
+            addPost.style.background=''
+            
             
           }
        

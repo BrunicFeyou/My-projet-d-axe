@@ -2,6 +2,7 @@
 session_start();
 require '../BDD/connect.php';
 
+
 ?>
 
 
@@ -27,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['form'] == 'addpublication')  
             // Ce qui nous donne un tableau avec 2 éléments, comme ceci [« image », « jpg »]. 
             //Il faut donc récupérer le dernier élément de ce tableau avec la fonction end().
 
-            //Le fonction strtolower permets de mettre en minuscule tout une chaîne de caractère.
+            //Le fonction strolower permets de mettre en minuscule tout une chaîne de caractère.
             // Ce contrôle nous permet de ne pas avoir de problème de comparaison par la suite.
             // Pas de soucis si quelqu’un mets un fichier avec une extension .Jpg, .JPG, .jpG, …
             

@@ -11,32 +11,27 @@
             </div>
             <section>
             
-                <input id="textspace" type="text" name="opinion" autocomplete="off" placeholder="Tell us your opinion">
+                <input id="textspace" type="text" name="opinion" autocomplete="off" placeholder="What's up ?">
                 <div class="elements-poste">
                  <!-- ligne de tags et ajout image sous le post -->
-                 <!-- <ul class="btn-img"> -->
+                 
                          <input type="file" name="photo" accept="image/png, image/jpeg"><!-- <i class="fa-solid fa-image"></i> -->
-                        <ul class="le-btn-tags">
-                            <li><a href="#"><i class="fa-solid fa-circle"></i></a></li>
-                            <select class="tags-list-deroulante" name="ntag">
-                                <option value="tranquilité"><i id="beige"class="fa-solid fa-circle"></i>#tranquilité</option>
-                                <option value="digital"><i id="orange" class="fa-solid fa-circle"></i>#digital
-                                </option>
-                                <option value="détente"><i id="jaune" class="fa-solid fa-circle"></i>#détente
-                                </option>
-                                <option value="activités"><i id="bleu" class="fa-solid fa-circle"></i>#activités
-                                </option>
-                                <option value="travail"><i id="rouge" class="fa-solid fa-circle"></i>#travail
-                                </option>
-                                <option value="courses"><i id="marron" class="fa-solid fa-circle"></i>#courses
-                                </option>
-                                <option value="home"><i id="blanc" class="fa-solid fa-circle"></i>#home</option>
-                                <option value="happy"><i id="vert" class="fa-solid fa-circle"></i>#happy</option>
-                                <option value="jeux"><i id="noir" class="fa-solid fa-circle"></i>#jeux</option>
-                                <option value="voyage"><i id="gris" class="fa-solid fa-circle"></i>#voyage</option>
+
+                            <select class="tags-list-deroulante" id="select" name="ntag" onchange ="tagstorage()">
+                                <option value="">Tags</option>
+                                <option value="tranquilité" id="beige">#tranquilité</option>
+                                <option value="digital" id="orange">#digital</option>
+                                <option value="détente" id="jaune">#détente</option>
+                                <option value="activités" id="bleu">#activités</option>
+                                <option value="travail" id="rouge">#travail</option>
+                                <option value="courses" id="marron">#courses</option>
+                                <option value="home" id="blanc">#home</option>
+                                <option value="happy" id="vert">#happy</option>
+                                <option value="jeux" id="noir">#jeux</option>
+                                <option value="voyage" id="gris">#voyage</option>
                             </select>
-                        </ul>
-                   <!-- </ul> -->
+                        
+                   
                 </div>
                 <div class="btn-partager">
                     <button type="submit" class="partager"> Partager</button>

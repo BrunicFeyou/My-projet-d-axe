@@ -39,23 +39,9 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
     <script src="../javascript/supprimer.js"></script>
 </head>
 <body id="body-accueil">
-    <?php require '../donneesphp/navbarmobil.template.php'; ?> 
-    <?php  require '../donneesphp/modal.template.php'; ?>
 
 
-    <?php
-
-    if(isset($_SESSION['pseudo'])){
-
-   
-    
-   } else {
-
-    require '../donneesphp/inscritoi.php';
-   }
-   
-    ?>
-    <?php 
+<?php 
     foreach($publications as $publication) {  ?>
          
         <div class="fond-suppression" id="supp<?php echo $publication["id"]; ?>">
@@ -71,6 +57,26 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
         </div>
     
   <?php } ?>
+
+  <?php
+
+    if(isset($_SESSION['pseudo'])){
+
+   
+    
+   } else {
+
+    require '../donneesphp/inscritoi.php';
+   }
+   
+    ?>
+    <?php  require '../donneesphp/modal.template.php'; ?>
+    <?php require '../donneesphp/navbarmobil.template.php'; ?> 
+    
+
+
+    
+    
     
     <section class="ma-page"> <!-- section contenant deux grands blocs: la navbar et la page-->
         
@@ -156,8 +162,17 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
                  echo '<img style= "display : none" class="img-pub" src= "'.$publication['images'].'">'; 
                 }
                 
-              echo ' <br> 
-              #'.$publication['tag'].'
+              echo ' <br>'; 
+
+              if (isset($publication['tag'])) {
+
+                echo '#'.$publication['tag'].'';
+
+              } else {
+                echo $publication['tag'];
+              }
+             
+              echo '
                </span>
             </div>
             <div class="les-trois-boutons"> <!--une div contenant les trois mention "aimer,commenter,partager"-->
@@ -175,9 +190,7 @@ ON publication.nom = inscription.user_id ORDER BY creation DESC' );
                     <!-- <img src="" alt=" un avion pour partager le post" class="avion"> -->
                 </a>
            </div>
-           <button class="btn-affichage-commentaires">
-               <i class="affiche-commentaire"> "afficher les 28 commentaires"</i>
-           </button>
+           
            </article> ';
 
             }

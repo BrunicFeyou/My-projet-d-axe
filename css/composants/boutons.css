@@ -37,10 +37,7 @@
     
  }
 
-.lien-delete i {
- color: rgb(122, 87, 44) ;
- /* margin-left: 90%; */
-}
+
 
 .jaime {
 color: rgb(122, 87, 44);
@@ -66,14 +63,15 @@ font-size: 25px;
 }
 
 .btn {
-    margin-left: 197px;
+    
     margin-top: 80px;
+    margin-bottom: 40px;
     background-color: var(--main-bg-color);
 }
 
 #btn-modifier{
     border-style: none;
-    background-color: white;  
+    background: none;  
 }
 
 .btn-modfier-profil button{
@@ -91,10 +89,25 @@ font-size: 25px;
 
 .lien-delete{
     border-style: none;
-    background: white;
+    background: none;
+    transform: scale(1);
+    transition: all 1s ;
    /*  margin-left: 100px; */
 
 }
+
+.lien-delete:hover{
+    transform: scale(1.5);
+}
+
+.lien-delete i {
+    color: rgb(122, 87, 44) ;
+    /* margin-left: 90%; */
+      
+}
+
+
+
 
 
 .confirmer{
@@ -182,3 +195,12 @@ font-size: 25px;
     border-style: none;
     background-color: transparent;
 }
+
+
+#border-connexion{
+    border: 1px solid var(--main-bg-color);
+    justify-self: center;
+    margin: auto;
+}
+
+

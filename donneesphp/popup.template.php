@@ -1,1 +1,3 @@
-<div  id="forms-pub"></div>
+<div  id="forms-pub">
+    <p>+</p>
+</div>

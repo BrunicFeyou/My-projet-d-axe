@@ -16,6 +16,7 @@
 
 :root {
     --main-bg-color:rgb(122, 87, 44);
+    
     --main-bh-color:rgb(157, 115, 65);
     --main-be-color:bisque; 
     --main-or-color:orange; 
@@ -30,9 +31,19 @@
   }
 #body-accueil {
   /*  background-color: rgb(225, 207, 186) */
-  background-color: rgb(255, 255, 255);
+ /*  background-color: rgb(255, 255, 255); */
+  background-image: url(../Images/fond_beige.jpg);
+  object-fit: cover;
   
 }
+
+#body-profil {
+   /*  background-color: rgb(225, 207, 186) */
+   /*  background-color: rgb(255, 255, 255); */
+    background-image: url(../Images/fond_beige.jpg);
+    object-fit: cover;
+    
+  }
 
 
 .photo-profil{
@@ -40,6 +51,7 @@
     height: 50px;
     object-fit: cover;
     border-radius: 40%;
+    
 }
 
 .img-publication {
@@ -73,31 +85,40 @@ z-index: -3;
 
 
 #forms-pub{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    width: 48px;
+    height: auto;
+    display: flex;
+    border-radius: 30px;
     background-color: var(--main-bg-color);
     position: fixed;
     bottom: 17px;
     right: 20px;
     box-shadow: 2px 1px 3px;
     cursor: pointer;
+    transition: width 1s;
 
     
 
 
 }
+#forms-pub:hover {
+  
+    width: 65px;
+}
+
 #forms-pub p{
 
     color: white;
     /* text-align: center; */
     /* align-items: center;
     margin: auto; */
-    width: 100%;
-    height: 100%;
-    margin: auto;
+    margin: auto; 
+    font-size: 30px;
+    text-align: center;
+    transition: content 1s;
     
 }
+
 
 .z-index{
     z-index: -2;

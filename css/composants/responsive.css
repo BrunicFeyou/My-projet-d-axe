@@ -14,7 +14,7 @@
 
     .fiche-connexion{
         
-        margin: auto;
+        margin: 10px auto 10px auto;
     }
     
    /*  .logo{
@@ -39,7 +39,7 @@
   /* Pour la page d'inscription */
 @media (max-width:750px) {
     .formulaire-inscription{
-        margin: auto;
+        margin: 10px auto 10px auto;
 
 
     }
@@ -145,3 +145,30 @@
     }
 }
 
+@media (max-width:1500px) {
+    .forms{
+        width: 550px;
+    }
+}
+
+@media (max-width:1200px) {
+    .forms{
+        width: 480px;
+
+    }
+}
+
+@media (max-width:1091px) {
+    .forms{
+        width: 460px;
+
+    }
+}
+
+@media (max-width:992px) {
+    .forms{
+       width: 550px;
+       margin: 25px auto 25px auto ;
+
+    }
+}
